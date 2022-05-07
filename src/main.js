@@ -1,0 +1,16 @@
+import { createApp } from 'vue';
+import App from './App';
+import router from './routes';
+import store from './Store/index.js';
+import coacheService from './services/CoachService.js';
+import BaseDialog from './components/BaseDialog.vue';
+import BaseCard from './components/BaseCard.vue';
+import BaseSpinner from './components/BaseSpinner.vue';
+const app = createApp(App);
+app.use(router);
+app.use(store);
+app.use(coacheService);
+app.component('base-dialog', BaseDialog);
+app.component('base-card', BaseCard);
+app.component('base-spinner', BaseSpinner);
+app.mount('#app');
